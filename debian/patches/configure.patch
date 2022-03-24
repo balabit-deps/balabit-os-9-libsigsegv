@@ -1,0 +1,11 @@
+--- a/m4/fault.m4
++++ b/m4/fault.m4
+@@ -53,7 +53,7 @@
+ # define SIGSEGV_FAULT_ADDRESS_ROUNDOFF_BITS 0UL
+ #endif
+ unsigned long page;
+-int handler_called = 0;
++volatile int handler_called = 0;
+ void sigsegv_handler ($5)
+ {
+   void *fault_address = (void *) ($6);
